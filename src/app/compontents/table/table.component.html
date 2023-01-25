@@ -1,0 +1,45 @@
+<div class="container">
+  <nav></nav>
+  <div class="main-container">
+    <header>
+      <h3 class="subtitle">Financial Managment &#183; CAPEX Managment</h3>
+      <h1 class="header">CEMEX Go Online Stores</h1>
+    </header>
+      <app-search-bar 
+        (filterEvent)="onFilter($event)" 
+        (searchEvent)="onSearch($event)" 
+        (toggleModal)="toggleModal($event)">
+      </app-search-bar>
+    <div class="total">
+      <h2> Total: {{total_amount}}.00 USD</h2>
+    </div>
+    <body>
+      <table>
+        <tr>
+          <th class="stat">Status</th>
+          <th class="supplier">Supplier Name</th>
+          <th class="month">Month</th>
+          <th class="phase">Phase</th>
+          <th class="internal">Interal Order</th>
+          <th class="amount">Amount (USD)</th>
+        </tr>
+        <tr *ngFor="let item of suppliers">
+          <td class="status">
+            <div class="status-icon" [ngClass]="{'active-icon':item.status === 'Active', 'pending-icon':item.status === 'Pending Aproval', 'waiting-icon':item.status === 'Waiting Compensation'}"></div>
+            <p>{{item.status}}</p>
+          </td>
+          <td>{{item.name}}</td>
+          <td>{{item.month}}</td>
+          <td>{{item.phase}}</td>
+          <td class="internal">{{item.internal_order}}</td>
+          <td class="amount">{{item.amount.toLocaleString("en-US")}}</td>
+        </tr>
+      </table> 
+    </body>
+  </div>
+  <app-filter-modal 
+    (filterEvent)="onFilter($event)" 
+    (toggleModal)="toggleModal($event)" 
+    [modal]="modal">
+  </app-filter-modal>
+</div>

@@ -1,0 +1,188 @@
+.modal{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #332c2c40;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.modal-container{
+	background: #FFF;
+	width: 70%;
+    height: 330px;
+    margin-top: 50px;
+/*    min-width: 700px;*/
+}
+
+.modal-title h2{
+    color: rgb(0, 28, 59);
+    font-weight: 600;
+}
+.modal-body{
+    padding: 40px;
+}
+
+.status-checkbox{
+    display: flex;
+}
+
+.status-check{
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+.status-check-label{
+    margin-right: 25px;
+}
+
+.filter-label{
+    display: inline-block;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: rgb(0, 28, 59);
+    font-weight: 600;
+}
+
+.select-list{
+    display: flex;
+    width: 100%;
+    gap: 40px;
+}
+
+.select-list label{
+    display: block;
+}
+
+
+.select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select select {
+  width: 100%;
+  height: 35px;
+  padding-right: 10px;
+  outline: none;
+  appearance: none;
+  font-size: 16px;
+  color: rgb(98,98,98);
+  padding-left: 10px;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 3px;
+}
+
+.select::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgb(97, 183, 243);
+  pointer-events: none;
+}
+
+select option{
+    color: #000;
+    padding: 0px !important;
+    display: inline-block;
+    margin-top: 10px !important;
+}
+
+.phase ,
+.month{
+    width: 25%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+
+button{
+    background-color: rgb(97, 183, 243);
+    color: #FFF;
+    padding: 6px 20px;
+    border-radius: 2px;
+    border: 1px solid rgb(97, 183, 243);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(97,183,243,0.6);
+}
+
+.cancel-button{
+    background: #FFF;
+    color: rgb(97, 183, 243);
+}
+
+.cancel-button:hover{
+    color: #FFF;
+}
+
+@media (max-width: 1120px) {
+    .select select,
+    .phase,
+    .month{
+        width: 170px;
+    }
+
+  
+}
+
+@media (max-width: 810px) {
+    .status-check-label{
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .filter-label{
+        font-size: 16px;
+    }
+
+    .select select{
+        font-size: 14px;
+    }
+
+    .modal-body{
+        padding: 40px 20px;
+    }
+
+  
+}
+
+@media (max-width: 620px) {
+
+    .status-checkbox{
+        display: block;
+    }
+
+    .select select,
+    .phase,
+    .month{
+        width: 100%;
+    }
+
+    .select-list{
+        display: block;
+    }
+
+    .modal-container{
+        height: 460px;
+    }
+  }

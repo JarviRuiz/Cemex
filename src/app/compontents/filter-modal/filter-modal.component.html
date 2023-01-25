@@ -1,0 +1,59 @@
+<div class="modal" *ngIf="modal">
+	<div class="modal-container">
+		<div class="modal-body">
+			<div class="modal-title">
+			<h2>Filter Expenses</h2>
+		</div>
+		<div class="filters">
+			<div class="status-filter">
+				<label for="status" class="filter-label">Status</label>
+				<div class="status-checkbox">
+					<div *ngFor =" let item of status_options">
+						<input type="checkbox" class="status-check" [value]="item.name" [id]="item.name" [(ngModel)]="item.isSelected"  (change)="onCheck($event)">
+						<label for="Active" class="status-check-label">{{item.name}}</label>
+					</div>
+				</div>
+			</div>
+			<div class="select-list">
+				<div class="phase">
+					<label for="phase" class="filter-label">Phase</label>
+					<div class="select">
+						<select class="se" [(ngModel)]="filter.phase">
+							<option selected="true" disabled value="">Chosse an option</option>
+							<option name="Research" value="Research">Research</option>
+							<option name="Ideation" value="Ideation">Ideation</option>
+							<option name="Development" value="Development">Development</option>
+							<option name="Deployment" value="Deployment">Deployment</option>
+						</select>
+					</div>
+				</div>
+				<div class="month">
+					<label for="month" class="filter-label">Month</label>
+					<div class="select">
+						<select [(ngModel)]="filter.month">
+							<option selected="true" disabled value="">Chosse an option</option>
+							<option name="January" value="January">January</option>
+							<option name="February" value="february">February</option>
+							<option name="March" value="March">March</option>
+							<option name="April" value="April">April</option>
+							<option name="May" value="May">May</option>
+							<option name="June" value="June">June</option>
+							<option name="July" value="July">July</option>
+							<option name="August" value="August">August</option>
+							<option name="September" value="September">September</option>
+							<option name="October" value="October">October</option>
+							<option name="November" value="November">November</option>
+							<option name="December" value="December">December</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="buttons">
+				<button  (click)="onApply()">Apply</button>	
+				<button class="cancel-button" (click)="onCancel()"> Cancel</button>	
+			</div>
+		</div>
+		
+	</div>
+</div>
